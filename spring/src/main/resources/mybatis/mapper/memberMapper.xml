@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace ="Member">
+	
+	<select id="commandMap" resultType="hashmap">
+		insert into b_member values(M_NO.nextval, #{userId}, #{userPwd}, #{m_tell}, #{m_email}, #{my_team} , sysdate, 'n')
+	</select>
+	
+	<select id="selectId" resultType="string">
+		select m_id from b_member where m_id = #{userId}
+	</select>
+	
+	<select id="memberLogin" resultType="Member">
+		select m_id, m_password, m_tell, m_email, m_teamname, m_leaveyn from b_member 
+		where m_id = #{m_id} and m_password = #{m_password}
+	</select>
+	
+	<select id="modifyPw" resultType="int">
+		update b_member set m_password = #{m_password} where m_id = #{m_id}
+	</select>
+
+	
+	
+	
+</mapper>

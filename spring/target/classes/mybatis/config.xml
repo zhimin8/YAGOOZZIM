@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+ <configuration>
+  
+  <typeAliases>
+  	<typeAlias type="com.kh.baseball.index.model.vo.PlayData" alias ="Index"/>
+  	<typeAlias type="com.kh.baseball.board.model.vo.Board" alias="Board"/>
+  	<typeAlias type="com.kh.baseball.member.model.vo.Member" alias="Member"/>
+  </typeAliases>
+  
+  	<mappers>
+  		<mapper resource="/mybatis/mapper/indexMapper.xml"/>
+  		<mapper resource="/mybatis/mapper/boardMapper.xml"/>
+  		<mapper resource="/mybatis/mapper/memberMapper.xml"/>
+  	</mappers>
+ 
+  
+ </configuration>

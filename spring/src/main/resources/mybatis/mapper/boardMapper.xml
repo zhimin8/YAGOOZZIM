@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Board">
+
+	<!-- 전체 게시물 갯수를 반환해주는 메소드 -->
+	<select id="contentCnt" resultType="int">
+		select count(*) from BOARD_NOTICE
+	</select>
+
+	<!-- 공지사항 리스트  -->
+	<select id="noticeList" resultType="Board">
+		select * from(
+			select rownum nnum, n1.*from(
+				select *from
+				BOARD_NOTICE
+				order by ${orderby} desc
+			)n1
+		) where nnum between #{page.start} and #{page.end}
+	</select>
+	
+	<!-- 공지사항 선택시:디테일 -->
+	<select id="selectNotice" resultType="Board">
+		select *from BOARD_NOTICE where N_NO = #{noticeNo}
+	</select>
+	
+	<!-- 파일선택 -->
+	<select id="selectFiles" resultMap="fileData">
+		select *from board_file where N_NO = #{noticeNo}
+	</select>
+	
+	<!-- 공지사항 업로드 -->
+	<insert id="insertNotice">
+		insert into board_notice values(
+		n_no.nextval, #{n_writer}, #{n_title}, sysdate, #{n_type}
+		)
+	</insert>
+	<insert id="insertFile">
+		insert into board_file values(
+		S_TB_FILE_IDX.nextval,
+		n_no.currval,
+		#{originFileName},
+        #{renameFileName},
+        #{savePath}
+		)
+	</insert>
+	
+	<resultMap type="map" id="fileData">
+		<result column="originFileName" property="originFileName"/>
+		<result column="renameFileName" property="renameFileName"/>
+		<result column="savePath" property="savePath"/>
+		<result column="n_no" property="n_no"/>
+	</resultMap>
+	
+	<!-- 삭제관련 -->
+	<delete id="deleteNotice">
+		delete from BOARD_NOTICE WHERE N_NO=#{noticeNo}
+	</delete>
+	<delete id="deleteFile">
+		delete from BOARD_FILE WHERE N_NO=#{noticeNo}
+	</delete>
+	
+	
+	
+	 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+
+
+
+
+
+</mapper>
