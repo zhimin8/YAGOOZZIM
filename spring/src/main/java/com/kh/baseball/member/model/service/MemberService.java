@@ -12,7 +12,10 @@ public interface MemberService {
 	
 	public Member memberLogin(Member member) throws SQLException;
 	
-	public int modifyPw(Member member) throws SQLException;
+	public int modifyPw(String id, String newPwd);
+	public int modifyTeam(String id, String newTeam);
+	
+	
 	
 
 }

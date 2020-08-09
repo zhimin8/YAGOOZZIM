@@ -48,3 +48,6 @@ select *from b_member;
 update b_member set m_password = 'test080501!'  where m_id = 'test080301';
 
 
+
+
+

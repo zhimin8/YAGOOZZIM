@@ -61,6 +61,7 @@ public class IndexController {
 	}
 	
 	public int insertData() {
+		
 		List<Map<String, String>> datalist = webCrawling();
 		 
 	    System.out.println(datalist);
@@ -78,10 +79,7 @@ public class IndexController {
 	}
 	
 	public List<Map<String, String>> webCrawling() {
-		  System.out.println("webcrawling 접근");
-	      System.setProperty("webdriver.chrome.driver","/chromedriver.exe");
 	      Document doc;
-	      System.out.println("Document 접근");   
 	      ChromeOptions options = new ChromeOptions();
 	      options.addArguments("--start-maximized"); // 전체화면으로 실행
 	      options.addArguments("--disable-popup-blocking"); // 팝업 무시
@@ -90,7 +88,6 @@ public class IndexController {
 	      List<Map<String, String>> res = null;
 	      // Webdriver 객체생성
 	      ChromeDriver driver = new ChromeDriver(options);
-	      System.out.println("WebDriver 접근");
 
 	      try {
 	         

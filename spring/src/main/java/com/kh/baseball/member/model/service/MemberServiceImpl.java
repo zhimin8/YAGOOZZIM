@@ -31,8 +31,13 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public int modifyPw(Member member) throws SQLException { 
-		return mDao.modifyPw(member);
+	public int modifyPw(String id, String newPwd){ 
+		return mDao.modifyPw(id, newPwd);
+	}
+
+	@Override
+	public int modifyTeam(String id, String newTeam) {
+		return mDao.modifyTeam(id, newTeam);
 	}
 	
 	

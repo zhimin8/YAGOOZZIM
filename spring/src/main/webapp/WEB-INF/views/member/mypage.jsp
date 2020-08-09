@@ -100,13 +100,14 @@
 								<div class="row">
 									<div class="col-md-6">
 										<ul class="list-styled">
-											<li><c:choose>
-													<c:when
-														test="${loginInfo.m_teamname eq 'dusan'}"> 두산 베어스 </c:when>
-													<c:when test="${loginInfo.m_teamname eq 'sk'}"> SK 와이번스 </c:when>
-													<c:otherwise> LG 트윈스 </c:otherwise>
-												</c:choose></li>
-
+											<li>
+											<c:choose>
+												<c:when test="${loginInfo.m_teamname eq 'dusan'}"> 두산 베어스 </c:when>
+												<c:when test="${loginInfo.m_teamname eq 'sk'}"> SK 와이번스 </c:when>
+												<c:when test="${loginInfo.m_teamname eq 'lg'}"> SK 와이번스 </c:when>
+												<c:otherwise> 응원하는 팀 없음</c:otherwise>
+											</c:choose>
+											</li>
 										</ul>
 										<select name="newTeam" class="form-control mb-3">
 											<option value="sk">SK 와이번스</option>

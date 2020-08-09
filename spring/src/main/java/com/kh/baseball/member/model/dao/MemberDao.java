@@ -4,7 +4,6 @@ import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.kh.baseball.member.model.vo.Member;
@@ -28,8 +27,24 @@ public class MemberDao {
 		return session.selectOne("Member.memberLogin", member);
 	}
 	
-	public int modifyPw(Member member) {
-		return session.selectOne("Member.modifyPw",  member);
+	public int modifyPw(String id, String newPwd) {
+		
+		Member modifyPw = new Member();
+		modifyPw.setM_id(id);
+		modifyPw.setM_password(newPwd);
+		
+		return session.update("Member.modifyPw", modifyPw);
+	}
+	
+	public int modifyTeam(String id, String newTeam) {
+		
+		System.out.println("Dao, modifyTeam newTeam : " + newTeam );
+		
+		Member modifyTeam = new Member();
+		modifyTeam.setM_id(id);
+		modifyTeam.setM_teamname(newTeam);
+		
+		return session.update("Member.modifyTeam", modifyTeam);
 	}
 	
 	

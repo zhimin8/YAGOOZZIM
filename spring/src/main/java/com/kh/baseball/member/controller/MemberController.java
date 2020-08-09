@@ -101,25 +101,41 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/member/modifypw.do")
-	public ModelAndView modifyPw(@RequestParam String newPwd, HttpSession session) throws SQLException {
+	public ModelAndView modifyPw(String newPwd, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
 		Member member = (Member) session.getAttribute("loginInfo");
 		
-		member.setM_password(newPwd);
+		String id = member.getM_id();
 		
-		System.out.println("비밀번호 수정시 id " + member.getM_id());
-		System.out.println("비밀번호 수정시  newPwd " + member.getM_password());
-		
-		
-		int res = mService.modifyPw(member);
+		int res = mService.modifyPw(id, newPwd);
 		if(res >= 1) {
 			mav.addObject("alertMsg","비밀번호 변경에 성공했습니다.");
-			mav.setViewName("/member/mypage.do");
+			mav.setViewName("/member/login");
 		} else {
 			mav.addObject("alertMsg","비밀번호 변경에 실패했습니다.");
-			mav.setViewName("redirect:login.do");
+			mav.setViewName("redirect:mypage.do");
 		}
 		return mav;
+	}
+	
+	@RequestMapping("/member/modifyteam.do")
+	public int modifyTeam(String newTeam,HttpSession session) {
+		ModelAndView mav = new ModelAndView();
+		
+		Member member = (Member) session.getAttribute("loginInfo");
+		String id = member.getM_id();
+		
+		int res = mService.modifyTeam(id, newTeam);
+		
+		if(res >= 1) {
+			mav.addObject("alertMsg","팀 변경에 성공했습니다.");
+			mav.setViewName("/member/mypage");
+		} else {
+			mav.addObject("alertMsg","팀 변경에 실패했습니다.");
+			mav.setViewName("redirect:mypage.do");
+		}
+		
+		return res;
 	}
 	
 	
