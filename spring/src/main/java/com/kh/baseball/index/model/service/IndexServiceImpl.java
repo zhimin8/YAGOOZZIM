@@ -25,13 +25,19 @@ public class IndexServiceImpl implements IndexService {
 		
 	}
 	
-	public List<PlayData> selectData(String[] dateList) {
-		return iDao.selectData(dateList);
+	public Map<String, Object> selectData(String sysdate, String tomorrow, String aftertomorrow) {
+		 Map<String, Object> res = new HashMap<>();
+	     List<PlayData> plist = iDao.selectData(sysdate, tomorrow, aftertomorrow);
+	     res.put("plist", plist);
+		return res;
 	}
-	
-	public int insertService(List<Map<String, String>> datalist) {
+
+	@Override
+	public int insertData(List<Map<String, String>> datalist) {
 		return iDao.insertData(datalist);
 	}
+	
+	
 	
 	
 	

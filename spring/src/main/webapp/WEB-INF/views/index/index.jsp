@@ -91,7 +91,7 @@
 					</div>
 				</div>
 				<div class="row justify-content-center">
-					<c:forEach items="${data.dataList}" var="list">
+					<c:forEach items="${dataList.plist}" var="list">
 						<!-- event -->
 
 						<div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">

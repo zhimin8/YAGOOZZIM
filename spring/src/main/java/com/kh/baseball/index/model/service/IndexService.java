@@ -7,8 +7,8 @@ import com.kh.baseball.index.model.vo.PlayData;
 
 public interface IndexService {
 	
-	public List<PlayData> selectData(String[] dateList);
-	public int insertService(List<Map<String, String>> datalist);
+	public Map<String, Object> selectData(String sysdate, String tomorrow, String aftertomorrow);
+	public int insertData(List<Map<String, String>> datalist);
 
 	
 }

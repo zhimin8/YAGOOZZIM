@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace ="Index">
+<mapper namespace="Index">
 
-	<select id="dates" resultType="index">
-		select *from bb_playdata where p_day in
-		<foreach collection="array" item="item" index="index" open="(" separator="," close=")">
-		${array[index]}
-		</foreach>
+	<select id="selectData" resultType="Index">
+		select * from bb_playdata
+		where p_day like '%'||#{sysdate}||'%' or p_day like
+		'%'||#{tomorrow}||'%' or p_day like '%'|| #{aftertomorrow}||'%'
 	</select>
-	
-	<insert id="schedule" parameterType="hashmap">
-		insert into bb_playdata values(p_no.nextval, #{day}, #{time}, #{play})
-	</insert>
-	
-	
-	
-	
-	
-	
+
+	<update id="insertData" parameterType="java.util.Map">
+		<foreach collection="list" item="map" separator=" "
+			open="INSERT ALL" close="SELECT * FROM DUAL">
+			INTO bb_playdata
+			VALUES (
+			extractvalue(dbms_xmlgen.getxmltype('select p_no.nextval - 1 from dual'),'//text()'),
+			#{map.day},
+			#{map.time},
+			#{map.play}
+			)
+		</foreach>
+	</update>
+
+
+
+
+
+
 </mapper>

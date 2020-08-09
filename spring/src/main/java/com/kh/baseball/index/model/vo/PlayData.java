@@ -11,6 +11,8 @@ public class PlayData implements Serializable{
 	private String p_day;
 	private String p_time;
 	private String p_play;
+	
+	
 	public int getP_no() {
 		return p_no;
 	}
