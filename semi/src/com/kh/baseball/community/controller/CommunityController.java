@@ -35,7 +35,6 @@ public class CommunityController implements Controller{
 	
 	// 후기공유 -> board/reviewList
 	public ModelAndView reviewList(HttpServletRequest request) {
-			
 		ModelAndView mav = new ModelAndView();
 			
 		int currentPage = 1; // 현재 페이지 

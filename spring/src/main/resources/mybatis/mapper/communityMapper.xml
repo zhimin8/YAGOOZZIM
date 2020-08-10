@@ -3,6 +3,26 @@
 
 <mapper namespace="Comm">
 
+	<!-- 전체 게시물 갯수를 반환해주는 메소드 -->
+	<select id="contentCnt" resultType="int">
+		select count(*) from BOARD_REVIEW
+	</select>
+
+	<select id="reviewList" resultType="Community">
+		select * from(
+			select rownum rnum, n1.*from(
+				select *from
+				BOARD_REVIEW
+				order by ${orderby} desc
+			)n1
+		) where rnum between #{page.start} and #{page.end}
+	</select>
+
+	<!-- 공지사항 선택시:디테일 -->
+	<select id="selectReview" resultType="Review">
+		select *from BOARD_REVIEW where R_NO = #{noticeNo}
+	</select>
+
 
 
 </mapper>
