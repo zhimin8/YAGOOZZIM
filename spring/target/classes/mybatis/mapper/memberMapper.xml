@@ -24,6 +24,9 @@
 		update b_member set m_teamname = #{m_teamname} where m_id = #{m_id}	
 	</select>
 	
+	<select id="findId" resultType="Member">
+		select m_id from b_member where m_email = #{m_email} and m_tell = #{m_tell}
+	</select>
 	
 	
 </mapper>

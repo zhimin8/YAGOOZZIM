@@ -39,6 +39,12 @@ public class MemberServiceImpl implements MemberService {
 	public int modifyTeam(String id, String newTeam) {
 		return mDao.modifyTeam(id, newTeam);
 	}
+
+	@Override
+	public Member findIdImple(String email, String tell) {
+		return mDao.findIdImple(email, tell);
+	}
+	
 	
 	
 	

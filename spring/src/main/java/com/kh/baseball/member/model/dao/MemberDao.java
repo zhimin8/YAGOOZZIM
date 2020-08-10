@@ -47,6 +47,20 @@ public class MemberDao {
 		return session.update("Member.modifyTeam", modifyTeam);
 	}
 	
+	public Member findIdImple(String email, String tell) {
+		
+		System.out.println("dao에서 아이디 찾기 : " + email);
+		System.out.println("dao에서 아이디 찾기 : " + tell);
+		
+		Member findId = new Member();
+		findId.setM_email(email);
+		findId.setM_tell(tell);
+		
+		return session.selectOne("Member.findId", findId);
+	}
+	
+	
+	
 	
 	
 

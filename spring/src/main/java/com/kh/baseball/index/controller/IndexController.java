@@ -33,7 +33,7 @@ public class IndexController {
 	@RequestMapping(value= "/", method = RequestMethod.GET )
 	public ModelAndView index() {
 		ModelAndView mav = new ModelAndView();
-		insertData();
+		/* insertData(); */
 		
 		//오늘/내일/모레 날짜 넣어주기
 		Calendar cal = Calendar.getInstance();

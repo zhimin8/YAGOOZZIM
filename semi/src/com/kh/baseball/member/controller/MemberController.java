@@ -262,6 +262,7 @@ public class MemberController implements Controller {
 		String tell = request.getParameter("tell");
 
 		ms.findidImple(email, tell);
+		
 		System.out.println("而⑦듃濡ㅻ윭�떒 �엯�땲�떎 :" + email);
 		mav.addObject("alertMsg", "�벑濡앺븯�떊 �씠硫붿씪濡� ID媛� 諛쒖넚�릺�뿀�뒿�땲�떎.");
 		mav.addObject("url", "/semi/index/index.do");

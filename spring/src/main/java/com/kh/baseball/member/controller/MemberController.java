@@ -95,7 +95,7 @@ public class MemberController {
 		Member member = (Member) session.getAttribute("loginInfo");
 		
 		mav.addObject("loginInfomation", member);
-		mav.setViewName("member/mypage");
+		mav.setViewName("redirect:mypage.do");
 
 		return mav;
 	}
@@ -110,10 +110,10 @@ public class MemberController {
 		int res = mService.modifyPw(id, newPwd);
 		if(res >= 1) {
 			mav.addObject("alertMsg","비밀번호 변경에 성공했습니다.");
-			mav.setViewName("/member/login");
+			mav.setViewName("member/login");
 		} else {
 			mav.addObject("alertMsg","비밀번호 변경에 실패했습니다.");
-			mav.setViewName("redirect:mypage.do");
+			mav.setViewName("member/mypage");
 		}
 		return mav;
 	}
@@ -129,18 +129,31 @@ public class MemberController {
 		
 		if(res >= 1) {
 			mav.addObject("alertMsg","팀 변경에 성공했습니다.");
-			mav.setViewName("/member/mypage");
+			mav.setViewName("member/mypage");
 		} else {
 			mav.addObject("alertMsg","팀 변경에 실패했습니다.");
-			mav.setViewName("redirect:mypage.do");
+			mav.setViewName("member/mypage");
 		}
 		
 		return res;
 	}
 	
+	@RequestMapping("/member/findid.do")
+	public String findId() {
+		return "member/findId";
+	}
 	
-	
-	
+	@RequestMapping("/member/findidimple")
+	public ModelAndView findIdImple(@RequestParam String email, @RequestParam String tell) {
+		ModelAndView mav = new ModelAndView();
+		
+		mService.findIdImple(email, tell);
+		
+		mav.addObject("alertMsg", "알림창이 여긴 왜뜨냐?/...");
+		mav.setViewName("/");
+		
+		return mav;
+	}
 	
 	
 	

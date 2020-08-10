@@ -15,6 +15,9 @@ public interface MemberService {
 	public int modifyPw(String id, String newPwd);
 	public int modifyTeam(String id, String newTeam);
 	
+	public Member findIdImple(String email, String tell);
+	
+	
 	
 	
 

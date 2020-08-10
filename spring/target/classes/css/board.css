@@ -1,0 +1,199 @@
+@charset "UTF-8";
+
+/* 커뮤니티의 글 작성하기 버튼*/
+#write-btn {
+	width: 150px;
+	background: gray;
+	text-align: center;
+	margin: 0px 0 40 800px;
+}
+
+#notice-section {
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.write-detail {
+	margin: 41px 0px 0px 218px;
+	text-align: center;
+	width: 75%;
+	height: 50%;
+	left: 15%;
+}
+
+.write-detail .write-title {
+	width: 100%;
+	height: 15%;
+	text-align: left;
+	font-size: 1.5vw;
+	padding: 1% 0 1% 0;
+	border-bottom: 2px solid;
+}
+
+.noticelist {
+	width: 100%;
+	height: 90%;
+}
+
+.noticelist th {
+	font-size: 1.5vw;
+	background-color: grey;
+	color: white;
+}
+
+.noticelist td {
+	border-bottom: 1px solid lightgrey;
+}
+
+.paging {
+	text-align: center;
+	height: 10%;
+	font-size: 1.3vw;
+}
+
+.notice-detail {
+	text-align: left;
+	width: 75%;
+	height: 50%;
+	left: 15%;
+}
+
+#row-size {
+	padding: 0 0 0 0;
+}
+
+.table-size {
+	width: 1200px;
+}
+
+#table-type {
+	/* padding: 0 0 0 95px; */
+	text-align: center;
+	width: 150px;
+}
+
+#table-title {
+	/* 	padding: 0px 0 0 30px; */
+	width: 400px;
+	text-align: center;
+}
+
+#thead-writer {
+	text-align: center;
+	width: 180px;
+}
+
+#table-writer {
+	/* padding: 0px 0 0 60px; */
+	text-align: center;
+	width: 180px;
+}
+
+#thead-date {
+	text-align: center;
+	width: 180px;
+}
+
+#table-date {
+	text-align: center;
+	width: 180px;
+}
+
+#thead-btn {
+	text-align: center;
+	width: 150px;
+}
+
+#table-btn {
+	text-align: center;
+	width: 150px;
+}
+
+#tbody-size {
+	
+}
+
+.tbody-btn {
+	text-align: right;
+}
+
+/* 게시판_detail 설정 */
+.button {
+	text-align: left;
+}
+
+.rv_Button {
+	width: 400px;
+	height: 50px;
+	display: block;
+	clear: both;
+	overflow: hidden;
+	border: 1px solid red;
+}
+
+#write-btn-form{
+	width: 150px;
+	background: gray;
+	text-align: center;
+	margin: 0px 0 40 1140px;
+}
+
+#write-btn-plus1 {
+	float: left;
+	width: 100px;
+	font-family: "Poppins", sans-serif;
+	font-size: 14px; 
+	padding : 10px 35px;
+	text-transform: capitalize;
+	padding: 15px 40px;
+	border-radius: 0;
+	font-weight: 500;
+	border: 0;
+	position: relative;
+	z-index: 1;
+	transition: .2s ease;
+	overflow: hidden;
+	padding: 10px 35px;
+	color:#fff;
+	background-color:#ffab08;
+	margin: 0 0 15 1200;
+}
+
+#write-btn-list {
+	width: 150px;
+	background: gray;
+	margin: 0 0 40 650;
+}
+
+#faq-box{
+	width: 180px;
+}
+
+/*작성폼 전체 커버*/
+.write-cover{
+	width: 800px;
+	height: 600px;
+	margin-left: 250px;
+	text-align: center;
+}
+/*글쓰기 시 작성완료 버튼*/
+#write-complete{
+	margin-left: 300px;	
+}
+
+/*게시글 이미지 수정*/
+#img-size{
+	width: 700px;
+	margin: auto;
+}
+
+/*aboutUs-팀원 역할 소개*/
+#introduce-list{
+	width: 600px;
+	
+}
+/*aboutUs-이미지*/
+#about-img-size{
+	width: 600;
+	magin: 150;
+}

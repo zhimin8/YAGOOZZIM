@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+/* 로그인 화면 */
+.logo-img{
+	width: 250px;
+	height: 50px;
+	border: 1px solid black;
+	line-height: 50px;
+}
+
+ul{	
+   list-style:none;
+}
+
+.login .login-top{
+	position: relative;
+	width: 500px;
+}
+
+.login .login-top li label{
+	display: inline-block;
+	width: 65px;
+	font-size: 13px;
+	color: #464646;
+	font-family: dotum;
+	font-weight: bold;
+}
+
+.login .login-top li{
+	padding: 0 0 9px;
+}
+
+.login .login-top li input[type="password"],
+.login .login-top li input[type="text"]{
+	width: 144px;
+	height: 29px;
+	padding: 0;
+	border-color: lightgray;
+}
+
+.login .login-top .btn{
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.login .login-top a{
+	display: block;
+	width:  109px;
+	height: 67px;
+	background: #829c2c;
+	font-size: 17px;
+	color: white;
+	text-align: center;
+	line-height : 69px;
+	font-weight: bold;
+}
+
+.login .login-top li .save{
+	padding: 0 0 0 59px;
+}
+
+.login .login-top li .save label{
+	width: auto;
+	font-weight: normal;
+}
+
+.login .login-bottom{
+	padding: 31px 0 0 59px;
+	
+}
+
+.login .login-bottom li{
+	color: #383d41;
+	fint-size: 12px;
+	font-family: dotum;
+}
+
+.login .login-bottom li a{
+	margin: 0 0 0 10px;
+	fint-size: 12px;
+	font-family: dotum;
+	font-weight: bold;
+	color: #829c2c;
+	text-decoration: underline;
+}
+
+.kakao{
+	border: 1px solid black;
+	width: 200px;
+	height: 30px;
+}
+
+/* 회원가입 */
+
+.join{
+	border: 1px solid red;
+}
+
+
