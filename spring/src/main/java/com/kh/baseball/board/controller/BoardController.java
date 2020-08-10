@@ -44,7 +44,9 @@ public class BoardController {
 		
 		Map<String, Object> res = bService.noticeList(orderby, currentPage, cntPerPage);
 	
-		mav.addObject("noticeData", res);
+		/* mav.addObject("noticeData", res); */
+		mav.addObject("paging", res.get("paging"));
+		mav.addObject("bdata", res.get("blist"));
 		mav.setViewName("board/notice");
 		
 		return mav;
@@ -126,11 +128,11 @@ public class BoardController {
 		
 		if(res > 0) {
 			mav.addObject("alertMsg", "삭제가 완료되었습니다.");
-			mav.addObject("url", "/baseball/board/notice.do");
+			mav.addObject("url", "/board/notice");
 			mav.setViewName("common/result");
 		} else {
 			mav.addObject("alertMsg", "존재하지 않는 게시물 입니다.");
-			mav.addObject("url", "/baseball/board/notice.do");
+			mav.addObject("url", "/board/notice");
 			mav.setViewName("common/result");
 		}
 		return mav;

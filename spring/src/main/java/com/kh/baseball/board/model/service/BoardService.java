@@ -17,9 +17,5 @@ public interface BoardService {
 	public void deleteFiles(int noticeNo);
 	
 	
-	
-	
-	
-	
 
 }

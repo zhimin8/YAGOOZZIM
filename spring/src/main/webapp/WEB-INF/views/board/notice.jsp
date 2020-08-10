@@ -29,7 +29,7 @@
 		<!-- /page title -->
 
 <section class="section">
-	<c:if test="${sessionScope.loginInfo.m_id eq 'admin'}">
+	<c:if test="${sessionScope.loginInfo.m_id eq 'test080301'}">
 		<a href="notice_write.do" class="btn btn-primary btn-sm" id="write-btn-form">작성하기</a>
 	</c:if>
 		<div class="container">

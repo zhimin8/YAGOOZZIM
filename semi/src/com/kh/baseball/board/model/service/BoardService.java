@@ -18,6 +18,7 @@ public class BoardService {
 	
 	// 공지사항 리스트
 	public Map<String, Object> noticeList(String orderby, int currentPage, int cntPerPage){
+		
 		Map<String, Object> res = new HashMap<>();
 		Connection con = jdt.getConnection();
 		Paging p =null;

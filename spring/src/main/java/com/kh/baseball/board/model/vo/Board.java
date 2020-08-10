@@ -19,6 +19,7 @@ public class Board implements Serializable {
 	private String original_filepath;
 	private String rename_filepath;
 	private int n_available;
+	
 	public int getN_no() {
 		return n_no;
 	}
