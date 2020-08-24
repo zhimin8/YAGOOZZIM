@@ -32,17 +32,7 @@ public class CommunityServiceImpl implements CommunityService {
 		return res;
 	}
 
-	@Override
-	public Map<String, Object> selectReview(int noticeNo) {
-		Map<String, Object> res = new HashMap<>();
-		Review review = cDao.selectReview(noticeNo);
-		List<Map<String,Object>> flist = null;
-		
-		return null;
-	}
-	
-	
-	
+
 	
 	
 	

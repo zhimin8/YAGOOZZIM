@@ -18,11 +18,5 @@
 		) where rnum between #{page.start} and #{page.end}
 	</select>
 
-	<!-- 공지사항 선택시:디테일 -->
-	<select id="selectReview" resultType="Review">
-		select *from BOARD_REVIEW where R_NO = #{noticeNo}
-	</select>
-
-
 
 </mapper>
