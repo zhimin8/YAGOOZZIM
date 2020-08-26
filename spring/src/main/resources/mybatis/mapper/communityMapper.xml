@@ -18,5 +18,10 @@
 		) where rnum between #{page.start} and #{page.end}
 	</select>
 
+	<select id="selectReview" resultType="Review">
+		SELECT * FROM BOARD_REVIEW WHERE R_NO = #{reviewNo}
+	</select>
+	
+
 
 </mapper>

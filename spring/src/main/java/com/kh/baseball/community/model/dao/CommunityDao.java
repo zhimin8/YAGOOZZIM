@@ -29,6 +29,10 @@ public class CommunityDao {
 		data.put("orderby", orderby);
 		return session.selectList("Comm.reviewList", data);
 	}
+	
+	public Review selectReview(int reviewNo) {
+		return session.selectOne("Comm.selectReview", reviewNo);
+	}
 
 
 }

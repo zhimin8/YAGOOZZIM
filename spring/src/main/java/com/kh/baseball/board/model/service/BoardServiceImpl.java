@@ -28,7 +28,7 @@ public class BoardServiceImpl implements BoardService {
 		Paging page = new Paging(bDao.contentCnt(), currentPage, cntPerPage);
 		List<Board> blist = bDao.noticeList(page, orderby);
 		res.put("paging", page);
-		res.put("blist", blist);
+		res.put("bdata", blist);
 
 		return res;
 	}
@@ -48,7 +48,6 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public int insertNotice(Board board, List<Map<String, Object>> fileData) {
 		int temp = bDao.insertNotice(board);
-
 		return temp;
 	}
 

@@ -38,12 +38,12 @@ public class CommunityController {
 		
 		Map<String, Object> res = cService.reviewList(orderby, currentPage, cntPerPage);
 		
-		mav.addObject("paging", res.get("paging"));
-		mav.addObject("rdata", res.get("rlist"));
 		mav.setViewName("community/review");
-		
 		return mav;
 	}
+
+	/* @RequestMapping("community/review_detail.do") */
+	
 	
 	
 	

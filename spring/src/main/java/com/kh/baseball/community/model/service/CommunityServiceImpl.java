@@ -27,12 +27,22 @@ public class CommunityServiceImpl implements CommunityService {
 		List<Review> rlist = cDao.reviewList(page, orderby);
 		
 		res.put("paging", page);
-		res.put("rlist", rlist);
+		res.put("rdata", rlist);
 	
 		return res;
 	}
 
+	@Override
+	public Map<String, Object> selectReview(int reviewNo) {
+		Map<String, Object> res = new HashMap<>();
+		Review review = cDao.selectReview(reviewNo);
+		
+		res.put("review", review);
+		return res;
+	}
 
+
+	
 	
 	
 	
