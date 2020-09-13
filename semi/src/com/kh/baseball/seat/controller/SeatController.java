@@ -38,11 +38,11 @@ public class SeatController implements Controller {
 		int idx = 0;
 		
 		try {
-			jObj = gson.fromJson(
-					new FileReader(new File(
-							request.getSession().getServletContext().getRealPath("/") + "resources/baseball.json")),
-					JsonObject.class);
+			// Gson 객체를 사용해서 json을 java Object로 변경
+			jObj = 
+				gson.fromJson(new FileReader(new File(request.getSession().getServletContext().getRealPath("/") + "resources/baseball.json")),JsonObject.class);
 			JsonArray jsonArray = jObj.getAsJsonArray("DATA");
+			
 			for (JsonElement je : jsonArray) {
 				// 잠실
 				if (request.getParameter("stadium").toLowerCase().equals("jamsil")) {
